@@ -1,0 +1,21 @@
+diff --git a/ios/TrueSheetView.mm b/ios/TrueSheetView.mm
+index 948a6623d45e45a61ef8f0456b2c0e8ea12b0ae2..73e88ea0107a322c4f96b778d4d8544638d810cf 100644
+--- a/ios/TrueSheetView.mm
++++ b/ios/TrueSheetView.mm
+@@ -347,6 +347,16 @@ - (void)prepareForRecycle {
+   _pendingNavigationRepresent = NO;
+ }
+ 
++- (void)updateLayoutMetrics:(const LayoutMetrics &)layoutMetrics
++           oldLayoutMetrics:(const LayoutMetrics &)oldLayoutMetrics {
++  [super updateLayoutMetrics:layoutMetrics oldLayoutMetrics:oldLayoutMetrics];
++
++  // RN 0.88 resets recycled views to EmptyLayoutMetrics, which forces `hidden`
++  // to be derived from displayType on the next mount. This placeholder view
++  // must always stay hidden, since the sheet content is presented elsewhere.
++  self.hidden = YES;
++}
++
+ #pragma mark - Child Component Mounting
+ 
+ - (void)cleanupContainerView {

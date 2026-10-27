@@ -1,0 +1,13 @@
+appId: org.reactjs.native.example.TrueSheetRecycleRepro
+---
+- launchApp
+- assertVisible: Unmount card
+- takeScreenshot: screenshots/1-first-mount
+- tapOn: Unmount card
+- tapOn: Mount card
+- assertVisible: Unmount card
+# Bug: the recycled TrueSheetView is no longer hidden and paints the box red
+- takeScreenshot: screenshots/2-after-remount
+- tapOn: Present sheet
+- waitForAnimationToEnd
+- takeScreenshot: screenshots/3-sheet-presented

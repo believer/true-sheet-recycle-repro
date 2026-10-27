@@ -1,0 +1,24 @@
+{
+  "name": "TrueSheetRecycleRepro",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ios": "react-native run-ios",
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "@lodev09/react-native-true-sheet": "3.11.18",
+    "react": "19.3.0",
+    "react-native": "0.88.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.25.2",
+    "@react-native-community/cli": "20.2.0",
+    "@react-native-community/cli-platform-ios": "20.2.0",
+    "@react-native/babel-preset": "0.88.0",
+    "@react-native/metro-config": "0.88.0"
+  },
+  "engines": {
+    "node": ">= 22.11.0"
+  }
+}
